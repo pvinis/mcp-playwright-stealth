@@ -1,5 +1,9 @@
-import type { CallToolResult, TextContent, ImageContent } from '@modelcontextprotocol/sdk/types.js';
-import type { Page, Browser, APIRequestContext } from 'playwright';
+import type {
+  CallToolResult,
+  TextContent,
+  ImageContent,
+} from "@modelcontextprotocol/sdk/types.js";
+import type { Page, Browser, APIRequestContext } from "rebrowser-playwright";
 
 // Context for tool execution
 export interface ToolContext {
@@ -23,21 +27,25 @@ export interface ToolHandler {
 // Helper functions for creating responses
 export function createErrorResponse(message: string): ToolResponse {
   return {
-    content: [{
-      type: "text",
-      text: message
-    }],
-    isError: true
+    content: [
+      {
+        type: "text",
+        text: message,
+      },
+    ],
+    isError: true,
   };
 }
 
-export function createSuccessResponse(message: string | string[]): ToolResponse {
+export function createSuccessResponse(
+  message: string | string[]
+): ToolResponse {
   const messages = Array.isArray(message) ? message : [message];
   return {
-    content: messages.map(msg => ({
+    content: messages.map((msg) => ({
       type: "text",
-      text: msg
+      text: msg,
     })),
-    isError: false
+    isError: false,
   };
-} 
+}

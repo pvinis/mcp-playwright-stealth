@@ -1,5 +1,10 @@
-import type { APIRequestContext } from 'playwright';
-import { ToolHandler, ToolContext, ToolResponse, createErrorResponse } from '../common/types.js';
+import type { APIRequestContext } from "rebrowser-playwright";
+import {
+  ToolHandler,
+  ToolContext,
+  ToolResponse,
+  createErrorResponse,
+} from "../common/types.js";
 
 /**
  * Base class for all API-based tools
@@ -34,7 +39,9 @@ export abstract class ApiToolBase implements ToolHandler {
    * @param context The tool context
    * @returns Either null if apiContext is available, or an error response
    */
-  protected validateApiContextAvailable(context: ToolContext): ToolResponse | null {
+  protected validateApiContextAvailable(
+    context: ToolContext
+  ): ToolResponse | null {
     if (!this.ensureApiContext(context)) {
       return createErrorResponse("API context not initialized");
     }
@@ -57,7 +64,9 @@ export abstract class ApiToolBase implements ToolHandler {
     try {
       return await operation(context.apiContext!);
     } catch (error) {
-      return createErrorResponse(`API operation failed: ${(error as Error).message}`);
+      return createErrorResponse(
+        `API operation failed: ${(error as Error).message}`
+      );
     }
   }
-} 
+}

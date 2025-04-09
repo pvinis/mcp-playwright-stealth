@@ -1,6 +1,6 @@
 {
   "name": "@pvinis/playwright-stealth-mcp-server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Model Context Protocol servers for Playwright (with stealth)",
   "license": "MIT",
   "author": "ExecuteAutomation, Ltd (https://executeautomation.com)",
