@@ -1,7 +1,7 @@
 {
-  "name": "@executeautomation/playwright-mcp-server",
+  "name": "@pvinis/playwright-stealth-mcp-server",
   "version": "1.0.3",
-  "description": "Model Context Protocol servers for Playwright",
+  "description": "Model Context Protocol servers for Playwright (with stealth)",
   "license": "MIT",
   "author": "ExecuteAutomation, Ltd (https://executeautomation.com)",
   "homepage": "https://executeautomation.github.io/mcp-playwright/",
@@ -31,8 +31,8 @@
     "@playwright/browser-chromium": "1.51.1",
     "@playwright/browser-firefox": "1.51.1",
     "@playwright/browser-webkit": "1.51.1",
-    "playwright": "1.51.1",
     "@playwright/test": "^1.51.1",
+    "rebrowser-playwright": "1.49.1",
     "uuid": "^9.0.1"
   },
   "keywords": [
